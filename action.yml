@@ -1,18 +1,11 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Momentic Run Tests'
+description: 'GitHub Action to run tests on Momentic'
+author: 'Momentic'
 
-# Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  test-id:
+    description: 'ID of the test to run'
     required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
 
 runs:
   using: node20
