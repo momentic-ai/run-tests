@@ -26,7 +26,7 @@ test.
     fetch-depth: 0
 
 - name: Run tests using Momentic
-  uses: momentic-ai/run-tests@latest
+  uses: momentic-ai/run-tests@v1
   env:
     MOMENTIC_API_KEY: ${{ secrets.MOMENTIC_API_KEY }}
   with:
