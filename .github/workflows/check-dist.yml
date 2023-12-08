@@ -37,15 +37,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-          cache: npm
+          cache: pnpm
 
       - name: Install Dependencies
-        id: install
-        run: npm ci
+        run: pnpm i
 
       - name: Build dist/ Directory
-        id: build
-        run: npm run bundle
+        run: pnpm bundle
 
       # This will fail the workflow if the PR wasn't created by Dependabot.
       - name: Compare Directories
