@@ -11,8 +11,8 @@ Give your new API key a name (for example, "GitHub Action Run Tests).
 
 ![View create api key dialog.](images/create-api-key.png)
 
-Click Create at the bottom of the dialog and copy your token, which you’ll use
-as your `MOMENTIC_API_KEY`. We recommend you store this as an
+Click Create and copy your token, which you’ll use as your `MOMENTIC_API_KEY`.
+We recommend you store this as an
 [encrypted secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
 ## Usage
