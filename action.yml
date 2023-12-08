@@ -1,8 +1,10 @@
 name: 'Momentic Run Tests'
 description: 'GitHub Action to run tests on Momentic'
 author: 'Momentic'
-icon: 'play-circle'
-color: 'blue'
+
+branding:
+  icon: 'play-circle'
+  color: 'blue'
 
 inputs:
   test-id:
