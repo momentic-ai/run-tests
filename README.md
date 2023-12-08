@@ -17,8 +17,8 @@ We recommend you store this as an
 
 ## Usage
 
-Adding the following to your workflow will create a new Sentry release and tell
-Sentry that you are deploying to the `production` environment.
+Adding the following to your workflow will create new test run for the specified
+test.
 
 ```yaml
 - uses: actions/checkout@v3
