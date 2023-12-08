@@ -9,7 +9,7 @@ API key. In Momentic, navigate to: API key.
 
 Give your new API key a name (for example, "GitHub Action Run Tests).
 
-![View of internal integration permissions.](images/internal-integration-permissions.png)
+![View create api key dialog.](images/create-api-key.png)
 
 Click Create at the bottom of the dialog and copy your token, which you’ll use
 as your `MOMENTIC_API_KEY`. We recommend you store this as an
@@ -26,7 +26,7 @@ Sentry that you are deploying to the `production` environment.
     fetch-depth: 0
 
 - name: Run tests using Momentic
-  uses: momentic-ai/run-tests@v1
+  uses: momentic-ai/run-tests@latest
   env:
     MOMENTIC_API_KEY: ${{ secrets.MOMENTIC_API_KEY }}
   with:
