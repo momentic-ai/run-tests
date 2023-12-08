@@ -4,8 +4,8 @@
 
 ### Create a Momentic API key
 
-For this action to communicate securely with Sentry, you'll need to create a new
-API key. In Momentic, navigate to: API key.
+For this action to communicate securely with Momentic, you'll need to create a
+new API key. In Momentic, navigate to: API key.
 
 Give your new API key a name (for example, "GitHub Action Run Tests).
 
