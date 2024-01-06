@@ -30,7 +30,8 @@ test.
   env:
     MOMENTIC_API_KEY: ${{ secrets.MOMENTIC_API_KEY }}
   with:
-    test-id: 8f20cad6-2fd5-4019-bcbc-26fb617f36c5
+    tests: |-
+      8f20cad6-2fd5-4019-bcbc-26fb617f36c5
 ```
 
 ### Inputs
@@ -43,6 +44,6 @@ test.
 
 #### Parameters
 
-| name      | description                    | default |
-| --------- | ------------------------------ | ------- |
-| `test-id` | ID of the test you want to run |
+| name    | description                                     | default |
+| ------- | ----------------------------------------------- | ------- |
+| `tests` | **[Required]** IDs of the tests you want to run | -       |

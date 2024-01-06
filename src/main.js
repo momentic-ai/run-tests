@@ -7,26 +7,32 @@ const httpm = require('@actions/http-client')
  */
 async function run() {
   try {
-    const testId = core.getInput('test-id', { required: true })
+    const testsString = core.getInput('tests', { required: true })
+
+    // parse into test ids
+    const testIds = input.split(/\r|\n/).map(line => line.trim())
 
     if (!process.env['MOMENTIC_API_KEY']) {
       throw Error('Environment variable MOMENTIC_API_KEY is missing an API key')
     }
 
-    const client = new httpm.HttpClient('momentic-run-tests-action')
-    client.requestOptions = {
+    const client = new httpm.HttpClient('momentic-run-tests-action', [], {
       headers: {
-        Authorization: `Bearer ${process.env['MOMENTIC_API_KEY']}`
+        Authorization: `Bearer ${process.env['MOMENTIC_API_KEY']}`,
+        'Content-Type': 'application/json'
       }
+    })
+
+    const url = `https://api.momentic.ai/v1/tests/queue`
+    const body = {
+      testIds
     }
 
-    const url = `https://app.momentic.ai/api/tests/${testId}/webhook`
-
-    const res = await client.post(url)
+    const res = await client.post(url, JSON.stringify(body))
 
     if (res.message.statusCode !== 200) {
       throw Error(
-        `Failed to trigger test run: ${res.message.statusCode} ${res.message.statusMessage}`
+        `Failed to queue test runs: ${res.message.statusCode} ${res.message.statusMessage}`
       )
     }
   } catch (error) {
