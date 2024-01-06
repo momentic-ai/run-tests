@@ -24717,7 +24717,7 @@ async function run() {
     const testsString = core.getInput('tests', { required: true })
 
     // parse into test ids
-    const testIds = input.split(/\r|\n/).map(line => line.trim())
+    const testIds = testsString.split(/\r|\n/).map(line => line.trim())
 
     if (!process.env['MOMENTIC_API_KEY']) {
       throw Error('Environment variable MOMENTIC_API_KEY is missing an API key')
